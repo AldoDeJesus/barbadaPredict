@@ -3,7 +3,7 @@ import json
 import joblib
 import numpy as np
 import os
-from flask import Flask
+from flask import Flask,jsonify
 
 app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
@@ -33,7 +33,7 @@ def main():
     cluster = kmeans.predict(scaled_data)
     
     # Devolver el resultado
-    print(json.dumps({'cluster': int(cluster[0])}))
+    print(jsonify({'cluster': int(cluster[0])}))
 
 #if __name__ == "__main__":
  #   main()
