@@ -3,6 +3,10 @@ import json
 import joblib
 import numpy as np
 import os
+from flask import Flask
+
+app = Flask(__name__)
+@app.route('/')
 
 def main():
     # Obtener la ruta absoluta del directorio actual
@@ -30,5 +34,5 @@ def main():
     # Devolver el resultado
     print(json.dumps({'cluster': int(cluster[0])}))
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+ #   main()
