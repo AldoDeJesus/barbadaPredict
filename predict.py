@@ -6,7 +6,7 @@ import os
 from flask import Flask
 
 app = Flask(__name__)
-@app.route('/')
+@app.route('/', methods='GET')
 
 def main():
     # Obtener la ruta absoluta del directorio actual
